@@ -5,8 +5,11 @@ library(tidyverse)
 library(cowplot)
 library(readxl)
 
+#Set Working Directory
+setwd("D:/Project - Financial Literacy")
+
 #Importing the Dataset
-data = read_xlsx("D:/RFDATA.xlsx", sheet = "RFdata-Student")
+data = read_xlsx("RFDATA.xlsx", sheet = "RFdata-Student")
 head(data)
 
 #Encode the categorical variables
@@ -77,3 +80,4 @@ ggplot(data=mds.data, aes(x=X, y=Y, label=Sample)) +
   xlab(paste("MDS1 - ", mds.var.per[1], "%", sep="")) +
   ylab(paste("MDS2 - ", mds.var.per[2], "%", sep="")) +
   ggtitle("MDS plot using (1 - Random Forest Proximities)")
+
